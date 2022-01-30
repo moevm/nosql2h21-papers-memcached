@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title>Publications</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body style="background-color:#FFFFFF">
+
+<form class="w3-container w3-card-4" method="POST" style="margin-top: 30px">
+    <h1>Поиск публикаций</h1>
+      <p><b>В каком источнике искать?</b><Br>
+        <input type="radio" name="SOURCE" checked="checked" value="publons"> PUBLONS<Br>
+        <input type="radio" name="SOURCE" value="pubmed"> PUBMED<Br>
+        <input type="radio" name="SOURCE" value="elibrary"> ELIBRARY<Br>
+      </p>
+      <p><input class="w3-input w3-border" name="FIO" type="text" placeholder="ФИО"></p>
+      <p><input class="w3-input w3-border" name="YEAR" type="text" placeholder="ГОД"></p>
+      <p><input class="w3-input w3-border" name="TEXT" type="text" placeholder="ПОИСК ПО ТЕКСТУ"></p>
+      <input type="submit" name="Search" value="ПОИСК" class="w3-btn" style="background-color:#FFFFFF; margin-right: 10px; padding-bottom: 20px; color: #000000">
+</form>
+    <ul>
+  {% for pub in result %}
+    <li>{{ pub }}</li>
+  {% endfor %}
+</ul>
+</body>
+</html>
